@@ -19,12 +19,12 @@ namespace Signals
             Instance = null;
         }
         
-        public UnityAction onFirstTimeTouchTaken = delegate{};
-        public UnityAction OnEnableInput = delegate{};
-        public UnityAction OnDisableInput = delegate{};
-        public UnityAction onInputTaken = delegate{};
-        public UnityAction onInputReleased = delegate{};
-        public UnityAction<HorizontalInputParams> onInputDragged = delegate{};
+        public UnityAction onEnableInput = delegate { };
+        public UnityAction onDisableInput = delegate { };
+        public UnityAction onFirstTimeTouchTaken = delegate { };
+        public UnityAction onInputTaken = delegate { };
+        public UnityAction onInputReleased = delegate { };
+        public UnityAction<HorizontalInputParams> onInputDragged = delegate { };
     }
     
 }
