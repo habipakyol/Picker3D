@@ -1,23 +1,26 @@
-﻿using RunTime.Enums;
-using RunTime.Managers;
+using Runtime.Enums;
+using Runtime.Managers;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace RunTime.Handlers
+namespace Runtime.Handlers
 {
     public class UIEventSubscriber : MonoBehaviour
     {
         [SerializeField] private UIEventSubscriptionTypes type;
         [SerializeField] private Button button;
 
-        private UIManager _manager;
-        
+
+        [ShowInInspector] private UIManager _manager;
+
+
         private void Awake()
         {
-            GetReferences();
+            FindReferences();
         }
-        
-        private void GetReferences()
+
+        private void FindReferences()
         {
             _manager = FindObjectOfType<UIManager>();
         }

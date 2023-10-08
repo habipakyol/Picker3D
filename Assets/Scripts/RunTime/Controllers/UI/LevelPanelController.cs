@@ -1,19 +1,19 @@
-﻿using TMPro;
-using UnityEngine;
-using UnityEngine.UI;
 using System.Collections.Generic;
 using DG.Tweening;
-using RunTime.Signals;
+using Runtime.Signals;
 using Sirenix.OdinInspector;
 using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
-namespace RunTime.Controllers.UI
+namespace Runtime.Controllers.UI
 {
     public class LevelPanelController : MonoBehaviour
     {
         [SerializeField] private List<Image> stageImages = new List<Image>();
         [SerializeField] private List<TextMeshProUGUI> levelTexts = new List<TextMeshProUGUI>();
-        
+
+
         private void OnEnable()
         {
             SubscribeEvents();
@@ -28,7 +28,7 @@ namespace RunTime.Controllers.UI
         [Button("SetStageColor")]
         private void OnSetStageColor(byte stageValue)
         {
-            stageImages[stageValue].DOColor(new Color(0.7722455f, 0.1123049f, 0.02765238f), 0.5f);
+            stageImages[stageValue].DOColor(new Color(0.9960785f, 0.4196079f, 0.07843138f), 0.5f);
         }
 
         private void OnSetLevelValue(byte levelValue)

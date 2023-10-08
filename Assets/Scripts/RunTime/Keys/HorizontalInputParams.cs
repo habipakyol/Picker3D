@@ -1,8 +1,10 @@
 using Unity.Mathematics;
 
-
-public struct HorizontalInputParams
+namespace Runtime.Keys
 {
-    public float2 ClampValues;
-    public float HorizontalValue;
+    public struct HorizontalInputParams
+    {
+        public float2 ClampValues;
+        public float HorizontalValue;
+    }
 }

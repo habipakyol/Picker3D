@@ -1,10 +1,10 @@
-﻿namespace RunTime.Enums
+namespace Runtime.Enums
 {
     public enum UIPanelTypes
     {
         Start,
-        Win,
         Level,
+        Win,
         Fail
     }
 }

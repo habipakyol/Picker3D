@@ -1,24 +1,11 @@
-﻿using UnityEngine;
+using Runtime.Extensions;
+using Runtime.Keys;
 using UnityEngine.Events;
 
-
-namespace RunTime.Signals
+namespace Runtime.Signals
 {
-    public class InputSignals : MonoBehaviour
+    public class InputSignals : MonoSingleton<InputSignals>
     {
-        public static InputSignals Instance;
-
-        private void Awake()
-        {
-            if (Instance!=null && Instance != this)
-            {
-                Destroy(gameObject);
-                return;
-            }
-
-            Instance = null;
-        }
-        
         public UnityAction onEnableInput = delegate { };
         public UnityAction onDisableInput = delegate { };
         public UnityAction onFirstTimeTouchTaken = delegate { };
@@ -26,5 +13,4 @@ namespace RunTime.Signals
         public UnityAction onInputReleased = delegate { };
         public UnityAction<HorizontalInputParams> onInputDragged = delegate { };
     }
-    
 }

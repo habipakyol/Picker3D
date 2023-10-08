@@ -1,27 +1,14 @@
-﻿using System;
-using RunTime.Enums;
-using UnityEngine;
+﻿using Enums;
+using Runtime.Enums;
+using Runtime.Extensions;
 using UnityEngine.Events;
 
-namespace RunTime.Signals
+namespace Runtime.Signals
 {
-    public class CoreUISignals : MonoBehaviour
+    public class CoreUISignals : MonoSingleton<CoreUISignals>
     {
-        public static CoreUISignals Instance;
-        
-        public UnityAction<UIPanelTypes, int> onOpenPanel = delegate{ };
-        public UnityAction<int> onClosePanel = delegate{ };
+        public UnityAction<UIPanelTypes, int> onOpenPanel = delegate { };
+        public UnityAction<int> onClosePanel = delegate { };
         public UnityAction onCloseAllPanels = delegate { };
-
-        private void Awake()
-        {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(gameObject);
-                return;
-            }
-
-            Instance = this;
-        }
     }
 }

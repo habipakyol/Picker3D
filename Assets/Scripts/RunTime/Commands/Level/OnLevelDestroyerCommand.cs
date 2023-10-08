@@ -1,18 +1,19 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace RunTime.Commands.Level
+namespace Runtime.Commands.Level
 {
     public class OnLevelDestroyerCommand
     {
-        public Transform _levelHolder;
-        public OnLevelDestroyerCommand(Transform levelHolder)
+        private Transform _levelHolder;
+
+        internal OnLevelDestroyerCommand(Transform levelHolder)
         {
-            _levelHolder = levelHolder; 
+            _levelHolder = levelHolder;
         }
 
-        public void Execute()
+        internal void Execute()
         {
-            if(_levelHolder.transform.childCount <= 0) return;
+            if (_levelHolder.transform.childCount <= 0) return;
             Object.Destroy(_levelHolder.transform.GetChild(0).gameObject);
         }
     }
